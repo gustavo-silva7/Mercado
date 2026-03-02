@@ -9,13 +9,25 @@ def cadastra_cliente():
         return
     
     telefone = input("Telefone (formato: (99) 9 9912-3456): ").strip
-    if not valida_telefone():
+    if not valida_telefone(telefone):
         print("Telefone invalido!!...")
+        pausa()
+        return
 
     email = input("Digite o e-mail: ").strip
-    if not valida_email():
+    if not valida_email(email):
         print("E-mail invalido!!...")
+        pausa()
+        return
     
-    cpf = input("Digite o CPF: ").strip
-    if not valida_cpf():
+    cpf = input("Digite o CPF (formato: 000.000.000.00): ").strip
+    if not valida_cpf(cpf):
         print("CPF invalido!!...")
+        pausa()
+        return
+    
+    nascimento = input("Digite a data de nascimento (dd-mm-aaaa): ")
+    if not valida_data(nascimento):
+        print("Data invalida!!")
+        pausa()
+        return
